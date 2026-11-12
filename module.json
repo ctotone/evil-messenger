@@ -1,0 +1,61 @@
+{
+  "id": "evil-messenger",
+  "title": "Evilbram Messenger",
+  "description": "Private messaging for Foundry VTT players and Game Masters, featuring conversation history, notifications, popup messages, read receipts, typing indicators, and private dice rolls.",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Evilbram",
+      "url": "https://github.com/ctotone",
+      "email": "ctotone@gmail.com",
+      "discord": "evilbram"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "url": "https://github.com/ctotone/evil-messenger",
+  "manifest": "https://github.com/ctotone/evil-messenger/releases/latest/download/module.json",
+  "download": "https://github.com/ctotone/evil-messenger/releases/latest/download/evil-messenger.zip",
+  "socket": true,
+  "scripts": [
+    "scripts/private-messages.js"
+  ],
+  "styles": [
+    "styles/private-messages.css"
+  ],
+  "bugs": "https://github.com/ctotone/evil-messenger/issues",
+  "languages": [
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "lang/de.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "es",
+      "name": "Español",
+      "path": "lang/es.json"
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    },
+    {
+      "lang": "it",
+      "name": "Italiano",
+      "path": "lang/it.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    }
+  ]
+}

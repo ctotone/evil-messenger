@@ -1,0 +1,112 @@
+<section class="evil-messenger-pm-dashboard-content">
+  <aside class="evil-messenger-pm-sidebar">
+    <header class="evil-messenger-pm-sidebar-heading">
+      <div class="evil-messenger-pm-sidebar-title">{{evilMessengerT "Dashboard.Contacts"}}</div>
+    </header>
+
+    {{#if hasContacts}}
+      <div class="evil-messenger-pm-player-list">
+        <section class="evil-messenger-pm-contact-section" aria-label="{{evilMessengerT 'Dashboard.ContactsOnline'}}">
+          {{#each onlineContacts}}
+            <div class="evil-messenger-pm-player {{#if selectedThread}}selected{{/if}}">
+              <label class="evil-messenger-pm-recipient-check" title="{{evilMessengerT 'Dashboard.IncludeRecipient'}}">
+                <input type="checkbox" data-pm-recipient="{{id}}" aria-label="{{evilMessengerT 'Dashboard.IncludeRecipientAria' name=label}}" {{#if checked}}checked{{/if}}>
+              </label>
+              <button type="button" class="evil-messenger-pm-player-open" data-action="selectConversation" data-user-id="{{id}}" title="{{evilMessengerT 'Dashboard.OpenConversation' name=label}}">
+                <span class="evil-messenger-pm-avatar"><img src="{{img}}" alt=""><span class="evil-messenger-pm-avatar-status online"></span></span>
+                <span class="evil-messenger-pm-player-text"><strong>{{label}}</strong>{{#if characterName}}<small>{{userName}}</small>{{/if}}</span>
+                {{#if unread}}<span class="evil-messenger-pm-unread">{{unread}}</span>{{/if}}
+              </button>
+            </div>
+          {{/each}}
+        </section>
+        <section class="evil-messenger-pm-contact-section offline" aria-label="{{evilMessengerT 'Dashboard.ContactsOffline'}}">
+          {{#each offlineContacts}}
+            <div class="evil-messenger-pm-player is-offline {{#if selectedThread}}selected{{/if}}">
+              <label class="evil-messenger-pm-recipient-check" title="{{evilMessengerT 'Dashboard.OfflineRecipient'}}">
+                <input type="checkbox" data-pm-recipient="{{id}}" aria-label="{{evilMessengerT 'Dashboard.OfflineRecipientAria' name=label}}" disabled>
+              </label>
+              <button type="button" class="evil-messenger-pm-player-open" data-action="selectConversation" data-user-id="{{id}}" title="{{evilMessengerT 'Dashboard.OfflineConversation' name=label}}">
+                <span class="evil-messenger-pm-avatar"><img src="{{img}}" alt=""><span class="evil-messenger-pm-avatar-status offline"></span></span>
+                <span class="evil-messenger-pm-player-text"><strong>{{label}}</strong>{{#if characterName}}<small>{{userName}}</small>{{/if}}</span>
+                {{#if unread}}<span class="evil-messenger-pm-unread">{{unread}}</span>{{/if}}
+              </button>
+            </div>
+          {{/each}}
+        </section>
+      </div>
+    {{else}}
+      <p class="evil-messenger-pm-empty">{{evilMessengerT "Dashboard.NoOtherUsers"}}</p>
+    {{/if}}
+  </aside>
+
+  <main class="evil-messenger-pm-main">
+    {{#if selectedUser}}
+      <header class="evil-messenger-pm-thread-header">
+        <span class="evil-messenger-pm-avatar"><img src="{{selectedUser.img}}" alt=""><span class="evil-messenger-pm-avatar-status {{#if selectedUser.active}}online{{else}}offline{{/if}}"></span></span>
+        <div>
+          <strong>{{selectedUser.label}}</strong>
+          {{#if selectedUser.characterName}}<small>{{selectedUser.userName}}</small>{{/if}}
+        </div>
+      </header>
+
+      <div class="evil-messenger-pm-history-viewport">
+        <div class="evil-messenger-pm-history">
+        {{#if hasHistory}}
+          {{#each history}}
+            <article class="evil-messenger-pm-history-item {{#if outgoing}}outgoing{{else}}incoming{{/if}} {{#if seen}}is-read{{/if}}" data-pm-message-id="{{id}}">
+              <div class="evil-messenger-pm-history-content">{{{content}}}</div>
+              <div class="evil-messenger-pm-message-footer">
+                <time>{{time}}</time>
+                {{#if outgoing}}<span class="evil-messenger-pm-read-indicator" title="{{evilMessengerT 'Read.Seen'}}" aria-label="{{evilMessengerT 'Read.Seen'}}"><img src="modules/evil-messenger/assets/pm-read-indicator.webp" alt="{{evilMessengerT 'Read.Seen'}}"></span>{{/if}}
+              </div>
+            </article>
+          {{/each}}
+        {{else}}
+          <div class="evil-messenger-pm-thread-empty">
+            <p>{{evilMessengerT "Dashboard.NoMessages"}}</p>
+          </div>
+        {{/if}}
+        </div>
+      </div>
+      <div class="evil-messenger-pm-typing" data-pm-typing-indicator hidden role="status" aria-live="polite">
+        <span class="evil-messenger-pm-typing-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span data-pm-typing-label></span>
+      </div>
+
+      <footer class="evil-messenger-pm-composer">
+        {{#unless canWhisper}}
+          <p class="evil-messenger-pm-permission-warning">
+            {{evilMessengerT "Dashboard.PermissionWarning"}}
+          </p>
+        {{/unless}}
+
+        <div class="evil-messenger-pm-texture-field">
+          <textarea
+            id="evil-messenger-pm-draft"
+            data-pm-draft
+            spellcheck="true"
+            rows="4"
+            placeholder="{{evilMessengerT 'Dashboard.DraftPlaceholder'}}"
+            {{#unless canWhisper}}disabled{{/unless}}
+          >{{draft}}</textarea>
+        </div>
+
+        <div class="evil-messenger-pm-send-options">
+          <button type="button" class="evil-messenger-pm-send evil-messenger-pm-send-classic" data-action="sendClassic" {{#unless canWhisper}}disabled{{/unless}}>
+            <i class="fa-solid fa-paper-plane"></i>
+            {{evilMessengerT "Dashboard.SendClassic"}}
+          </button>
+          <button type="button" class="evil-messenger-pm-send evil-messenger-pm-send-popup" data-action="sendPopup" {{#unless canWhisper}}disabled{{/unless}}>
+            <i class="fa-regular fa-window-restore"></i>
+            {{evilMessengerT "Dashboard.SendPopup"}}
+          </button>
+        </div>
+      </footer>
+    {{else}}
+      <div class="evil-messenger-pm-thread-empty">
+        <p>{{evilMessengerT "Dashboard.SelectContact"}}</p>
+      </div>
+    {{/if}}
+  </main>
+</section>

@@ -1,0 +1,17 @@
+<section class="evil-messenger-pm-notification-content">
+  <div class="evil-messenger-pm-notification-icon">
+    {{#if senderImg}}
+      <img src="{{senderImg}}" alt="{{senderLabel}}">
+    {{else}}
+      <i class="fa-regular fa-envelope"></i>
+    {{/if}}
+  </div>
+  <div class="evil-messenger-pm-notification-text">
+    <strong>{{senderLabel}}</strong>
+    <span>{{evilMessengerT "Notification.MessageReceived"}}</span>
+  </div>
+  <div class="evil-messenger-pm-notification-actions">
+    <button type="button" data-action="closeNotification">{{evilMessengerT "Notification.Ignore"}}</button>
+    <button type="button" data-action="openDashboard"><i class="fa-solid fa-arrow-up-right-from-square"></i> {{evilMessengerT "Notification.ViewMessage"}}</button>
+  </div>
+</section>

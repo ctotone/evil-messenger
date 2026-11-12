@@ -1,0 +1,1203 @@
+/* ============================================================
+   EVILBRAM MESSENGER — PALETTE CENTRALISÉE
+   Modifiez uniquement les valeurs ci-dessous pour recolorer
+   les trois fenêtres : messagerie, popup, notification MJ.
+   Les valeurs sont identiques à la version 0.2.5.
+   Les variables --em-color-* ne modifient pas le core Foundry.
+   ============================================================ */
+:root {
+  --em-color-transparent: transparent;
+  --em-color-white: white;
+  --em-color-black: black;
+
+  /* Fonds et surfaces */
+  --em-color-background-main: #111;
+  --em-color-background-sidebar-bottom: #151515;
+  --em-color-background-composer-bottom: #171717;
+  --em-color-background-panel: #191919;
+  /* Lueur et ombre très légères, communes aux panneaux et aux bulles. */
+  --em-color-surface-sheen: rgba(255, 255, 255, 0.032);
+  --em-color-surface-shade: rgba(0, 0, 0, 0.065);
+  --em-pm-surface-gradient-angle: 155deg;
+  --em-pm-surface-gradient: linear-gradient(
+    var(--em-pm-surface-gradient-angle),
+    var(--em-color-surface-sheen) 0%,
+    var(--em-color-transparent) 62%,
+    var(--em-color-surface-shade) 100%
+  );
+  --em-color-background-panel-top: #1b1b1b;
+  --em-color-background-avatar-ring: #202020;
+  --em-color-background-popup-top: #222;
+  --em-color-background-bubble: #242424;
+  --em-color-background-button: #282828;
+  --em-color-background-send: #39000096;
+  --em-color-background-send-hover: #530202;
+  --em-color-background-bubble-sent: #303030;
+  --em-color-background-button-hover: #383838;
+  --em-color-scrollbar-thumb: #303030;
+  --em-color-scrollbar-track: transparent;
+  --em-color-overlay-sidebar: rgba(0,0,0,0.12);
+  --em-color-overlay-notification-old: rgba(0,0,0,0.14);
+  --em-color-overlay-bubble-old: rgba(0,0,0,0.16);
+  --em-color-overlay-bubble-incoming-old: rgba(140,90,45,0.16);
+  --em-color-background-empty-icon: rgba(147,171,201,.085);
+  --em-color-background-notification-icon: rgba(149,176,207,.1);
+  --em-color-background-contact-selected-old: rgba(152,175,205,.12);
+  --em-color-background-contact-hover-old: rgba(170,185,207,.075);
+  --em-color-background-directory-hover: rgba(170,95,35,0.12);
+  --em-color-background-count-badge: rgba(181,197,220,.12);
+  --em-color-background-contact-hover: rgba(255,255,255,.045);
+  --em-color-background-contact-selected: rgba(255,255,255,.075);
+  --em-color-background-thread-header: rgba(27,27,27,.94);
+  --em-color-overlay-bubble-outgoing-old: rgba(55,105,190,0.16);
+  --em-color-overlay-contact-selected-old: rgba(90,135,220,0.18);
+
+  /* Textes et accents */
+  --em-color-status-offline-dot: #788392;
+  --em-color-status-offline-avatar: #7b8492;
+  --em-color-status-online: #7bbfa3;
+  --em-color-status-avatar-online: #1e8432;
+  --em-color-text-placeholder: #7f8c9f;
+  --em-color-text-timestamp: #8995a7;
+  --em-color-text-read: #038520;
+  --em-color-checkbox-accent: #91accd;
+  --em-color-text-empty-muted: #929cab;
+  --em-color-text-secondary: #98a3b4;
+  --em-color-selection-marker: #9eb4d0;
+  --em-color-badge-background: #9fabc2;
+  --em-color-text-tag: #a1b6d2;
+  --em-color-text-notification-kicker: #a5b9d3;
+  --em-color-text-empty-icon: #a8b9d0;
+  --em-color-text-empty: #aab4c3;
+  --em-color-badge-alert-background: #b3261e;
+  --em-color-accent: #b5c5dc;
+  --em-color-text-count-badge: #b8c9de;
+  --em-color-text-section: #bbc4d0;
+  --em-color-text-message-meta: #bdc9d8;
+  --em-color-text-notification-icon: #c0cfe2;
+  --em-color-text-composer-label: #d1d9e5;
+  --em-color-text-button-secondary: #d4deeb;
+  --em-color-text-empty-title: #d5dce7;
+  --em-color-text-button: #dfe8f4;
+  --em-color-text-contact-name: #e4e9f1;
+  --em-color-text-input: #e5ebf3;
+  --em-color-text-primary: #e6e9ef;
+  --em-color-text-popup-name: #eef2f7;
+  --em-color-text-notification-name: #eff2f7;
+  --em-color-text-thread-name: #f0f2f5;
+  --em-color-text-directory-button: #f3ead3;
+
+  /* Bordures */
+  --em-color-border-input: #49494978;
+  --em-color-border-button-secondary: #4d5968;
+  --em-color-border-button-primary: #65758c;
+  --em-color-border-foundry-fallback: #666;
+  --em-color-border-input-focus: #819bbb;
+  --em-color-border-button-hover: #94abc7;
+  --em-color-border-neutral-translucent: rgba(120,120,120,0.35);
+  --em-color-border-empty-icon: rgba(147,171,201,.12);
+  --em-color-border-contact-selected-old: rgba(167,190,223,.31);
+  --em-color-border-bubble-sent: rgba(169,195,225,.23);
+  --em-color-border-notification-icon: rgba(172,194,223,.2);
+  --em-color-border-notification: rgba(182,196,216,.12);
+  --em-color-border-bubble: rgba(182,196,216,.13);
+  --em-color-border-directory-hover: rgba(190,120,55,0.55);
+  --em-color-border-divider: #49494978;
+  --em-color-border-avatar: rgba(255,255,255,.14);
+  --em-color-outline-contact-selected-old: rgba(90,135,220,0.45);
+
+  /* Ombres, lumières et états */
+  --em-color-shadow-bubble-soft: rgba(0,0,0,.13);
+  --em-color-shadow-input-inset: rgba(0,0,0,.17);
+  --em-color-shadow-pressed-inset: rgba(0,0,0,.18);
+  --em-color-shadow-unread: rgba(0,0,0,.2);
+  --em-color-shadow-pressed: rgba(0,0,0,.22);
+  --em-color-shadow-button: rgba(0,0,0,.28);
+  --em-color-shadow-button-hover: rgba(0,0,0,.34);
+  --em-color-shadow-directory-glow: rgba(0,0,0,0.8);
+  --em-color-shadow-directory-text: rgba(0,0,0,0.95);
+  --em-color-glow-status-online: rgba(123,191,163,.09);
+  --em-color-focus-ring-input: rgba(129,155,187,.14);
+  --em-color-highlight-bubble-inset: rgba(255,255,255,.035);
+  --em-color-highlight-button-inset: rgba(255,255,255,.07);
+  --em-color-highlight-button-hover: rgba(255,255,255,.09);
+
+  /* Positionnement libre de l'heure et de la coche sur les bulles.
+     Ces variables ne modifient jamais la hauteur des messages.
+     bottom : valeur positive = vers l'intérieur / vers le haut.
+     right  : valeur positive = vers l'intérieur / vers la gauche.
+     Les valeurs négatives font dépasser l'élément de la bulle. */
+  --em-pm-time-bottom: 1px;
+  --em-pm-time-right: 20px;
+  --em-pm-read-bottom: 2px;
+  --em-pm-read-right: 1px;
+  --em-pm-read-width: 17px;
+  --em-pm-read-height: 8px;
+  --em-pm-typing-clearance: 14px;
+
+  /* Texture des zones de discussion : 0 = invisible, 1 = opacité originale du WebP. */
+  --em-pm-texture-history-opacity: 0.50;
+  --em-pm-texture-composer-opacity: 0.50;
+  /* Fond uni sous la texture, y compris dans la zone de rédaction. */
+  --em-pm-texture-input-background: #111;
+}
+
+.evil-messenger-pm-dashboard .window-content,
+.evil-messenger-pm-reply .window-content,
+.evil-messenger-pm-notification .window-content {
+  padding: 0;
+}
+
+.evil-messenger-pm-dashboard-content {
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  overflow: hidden;
+}
+
+.evil-messenger-pm-sidebar {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--em-color-border-divider);
+  background: var(--em-color-overlay-sidebar);
+}
+
+.evil-messenger-pm-sidebar > header {
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  border-bottom: 1px solid var(--em-color-border-divider);
+}
+
+.evil-messenger-pm-sidebar > header span {
+  font-size: 0.78rem;
+  opacity: 0.7;
+}
+
+.evil-messenger-pm-player-list {
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0.4rem;
+}
+
+.evil-messenger-pm-player {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  align-items: stretch;
+  border-radius: 6px;
+  margin-bottom: 0.3rem;
+}
+
+.evil-messenger-pm-player.selected {
+  background: var(--em-color-overlay-contact-selected-old);
+  outline: 1px solid var(--em-color-outline-contact-selected-old);
+}
+
+.evil-messenger-pm-recipient-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.evil-messenger-pm-player-open {
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  margin: 0;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 0;
+  background: var(--em-color-transparent);
+  text-align: left;
+}
+
+.evil-messenger-pm-player-open img,
+.evil-messenger-pm-thread-header img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 0;
+}
+
+.evil-messenger-pm-player-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.evil-messenger-pm-player-text strong,
+.evil-messenger-pm-player-text small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  var(--em-color-white)-space: nowrap;
+}
+
+.evil-messenger-pm-player-text small {
+  opacity: 0.65;
+}
+
+.evil-messenger-pm-unread {
+  min-width: 1.35rem;
+  height: 1.35rem;
+  padding: 0 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--em-color-badge-alert-background);
+  color: var(--em-color-white);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.evil-messenger-pm-main {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.evil-messenger-pm-thread-header {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid var(--em-color-border-divider);
+}
+
+.evil-messenger-pm-thread-header > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.evil-messenger-pm-thread-header small {
+  opacity: 0.65;
+}
+
+.evil-messenger-pm-history {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.evil-messenger-pm-history-item {
+  max-width: 82%;
+  padding: 0.55rem 0.65rem;
+  border-radius: 8px;
+  border: 1px solid var(--em-color-border-divider);
+  background: var(--em-color-overlay-bubble-old);
+}
+
+.evil-messenger-pm-history-item.outgoing {
+  align-self: flex-end;
+  background: var(--em-color-overlay-bubble-outgoing-old);
+}
+
+.evil-messenger-pm-history-item.incoming {
+  align-self: flex-start;
+  background: var(--em-color-overlay-bubble-incoming-old);
+}
+
+.evil-messenger-pm-history-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.8rem;
+}
+
+.evil-messenger-pm-history-meta time {
+  opacity: 0.55;
+}
+
+.evil-messenger-pm-history-content .evil-messenger-pm-message-text,
+.evil-messenger-pm-received-body .evil-messenger-pm-message-text {
+  line-height: 1.4;
+}
+
+.evil-messenger-pm-composer {
+  flex: 0 0 auto;
+  padding: 0.75rem;
+  border-top: 1px solid var(--em-color-border-divider);
+}
+
+.evil-messenger-pm-composer textarea,
+.evil-messenger-pm-reply textarea {
+  width: 100%;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.evil-messenger-pm-send-options {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.evil-messenger-pm-send-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  var(--em-color-white)-space: nowrap;
+}
+
+.evil-messenger-pm-send {
+  width: auto;
+}
+
+.evil-messenger-pm-send-options .evil-messenger-pm-send:first-child {
+  margin-left: auto;
+}
+
+.evil-messenger-pm-thread-empty,
+.evil-messenger-pm-empty {
+  flex: 1 1 auto;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.evil-messenger-pm-thread-empty i {
+  font-size: 2.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.evil-messenger-pm-chat-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--em-color-border-neutral-translucent);
+}
+
+.evil-messenger-pm-chat-reply {
+  width: auto;
+  min-height: 28px;
+  font-size: 0.82rem;
+}
+
+.evil-messenger-pm-backdrop {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: var(--em-color-overlay-notification-old);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.evil-messenger-pm-reply-content {
+  height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.evil-messenger-pm-received-message {
+  padding: 0.7rem;
+  border: 1px solid var(--em-color-border-divider);
+  border-radius: 7px;
+  background: var(--em-color-overlay-bubble-old);
+}
+
+.evil-messenger-pm-received-label {
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+
+.evil-messenger-pm-player-history {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: 250px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0.15rem 0.1rem 0.35rem;
+}
+
+.evil-messenger-pm-player-history-item {
+  max-width: 86%;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--em-color-border-divider);
+  border-radius: 8px;
+  background: var(--em-color-overlay-bubble-old);
+}
+
+.evil-messenger-pm-player-history-item.from-gm {
+  align-self: flex-start;
+  background: var(--em-color-overlay-bubble-outgoing-old);
+}
+
+.evil-messenger-pm-player-history-item.from-player {
+  align-self: flex-end;
+  background: var(--em-color-overlay-bubble-incoming-old);
+}
+
+.evil-messenger-pm-player-history-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.8rem;
+}
+
+.evil-messenger-pm-player-history-meta time {
+  opacity: 0.55;
+}
+
+.evil-messenger-pm-player-history-body .evil-messenger-pm-message-text {
+  line-height: 1.4;
+}
+
+.evil-messenger-pm-player-history-empty {
+  margin: auto;
+  opacity: 0.65;
+}
+
+.evil-messenger-pm-reply-label {
+  font-weight: 700;
+}
+
+.evil-messenger-pm-reply-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.evil-messenger-pm-reply-actions button {
+  width: auto;
+}
+
+.evil-messenger-pm-notification {
+  min-height: 0 !important;
+}
+
+.evil-messenger-pm-notification-content {
+  padding: 0.7rem;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.evil-messenger-pm-notification-icon {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.evil-messenger-pm-notification-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.evil-messenger-pm-notification-text span {
+  font-size: 0.8rem;
+  opacity: 0.65;
+}
+
+.evil-messenger-pm-notification-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
+.evil-messenger-pm-notification-actions button {
+  width: auto;
+  var(--em-color-white)-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .evil-messenger-pm-dashboard-content {
+    grid-template-columns: 1fr;
+  }
+
+  .evil-messenger-pm-sidebar {
+    max-height: 220px;
+    border-right: 0;
+    border-bottom: 1px solid var(--em-color-border-divider);
+  }
+}
+
+/* --- Accès Messages privés dans le répertoire Actors --- */
+.evil-messenger-pm-directory-launcher {
+  flex: 0 0 auto;
+  padding: 0.35rem 0.45rem 0.45rem;
+}
+
+.evil-messenger-pm-directory-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto !important;
+  min-height: 0;
+  max-height: none;
+  aspect-ratio: 2048 / 362;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  background-color: var(--em-color-transparent);
+  background-image: url("../assets/private-messages-button.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.evil-messenger-pm-directory-button:hover,
+.evil-messenger-pm-directory-button:focus-visible {
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+}
+
+.evil-messenger-pm-directory-button-label {
+  position: relative;
+  z-index: 1;
+  color: var(--em-color-text-directory-button);
+  font-size: 1rem;
+  font-weight: 700;
+  padding-left: 65px;
+  line-height: 1.1;
+  letter-spacing: 0.035em;
+  text-shadow: 0 2px 3px var(--em-color-shadow-directory-text), 0 0 6px var(--em-color-shadow-directory-glow);
+}
+
+.evil-messenger-pm-permission-warning {
+  margin: 0 0 0.55rem;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--em-color-border-directory-hover);
+  border-radius: 5px;
+  background: var(--em-color-background-directory-hover);
+  font-size: 0.8rem;
+}
+
+.evil-messenger-pm-popup-peer {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--em-color-border-divider);
+}
+
+.evil-messenger-pm-popup-peer img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 0;
+  object-fit: cover;
+}
+
+.evil-messenger-pm-popup-peer > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.evil-messenger-pm-popup-peer small {
+  opacity: 0.65;
+}
+
+/* ------------------------------------------------------------
+   Evilbram Messenger — interface neutre et raffinée (0.2 DEV)
+   Styles limités à l'application de messagerie, pas au core.
+   ------------------------------------------------------------ */
+.evil-messenger-pm-dashboard {
+  --em-radius: 10px;
+}
+.evil-messenger-pm-dashboard .window-content {
+  background: var(--em-color-background-main);
+  color: var(--em-color-text-primary);
+}
+.evil-messenger-pm-dashboard-content {
+  grid-template-columns: 282px minmax(0,1fr);
+  background: var(--em-color-background-main);
+  color: var(--em-color-text-primary);
+  font-family: inherit;
+}
+.evil-messenger-pm-sidebar {
+  border-right: 1px solid var(--em-color-border-divider);
+  background: linear-gradient(155deg,var(--em-color-background-panel-top),var(--em-color-background-sidebar-bottom) 68%);
+}
+.evil-messenger-pm-sidebar > header.evil-messenger-pm-sidebar-heading {
+  padding: 22px 18px 19px;
+  border-bottom: 1px solid var(--em-color-border-divider);
+  gap: 5px;
+}
+.evil-messenger-pm-eyebrow,.evil-messenger-pm-thread-kicker {
+  color: var(--em-color-text-secondary); font-size: 10px; font-weight: 750;
+  letter-spacing: .16em;
+}
+.evil-messenger-pm-sidebar-title {font-size: 19px;font-weight: 750;display:flex;align-items:center;gap:10px;line-height:1.3;}
+.evil-messenger-pm-contact-total {display:inline-flex;justify-content:center;align-items:center;min-width:22px;height:22px;padding:0 6px;border-radius:7px;font-size:11px;background:var(--em-color-background-count-badge);color:var(--em-color-text-count-badge);}
+.evil-messenger-pm-sidebar > header p {color:var(--em-color-text-secondary);font-size:11px;line-height:1.4;margin:0;}
+.evil-messenger-pm-player-list {padding:0 10px 16px;}
+.evil-messenger-pm-contact-section {padding-top:9px;}
+.evil-messenger-pm-contact-section.offline {margin-top:15px;border-top:1px solid var(--em-color-border-divider);padding-top:16px;}
+.evil-messenger-pm-section-label {display:flex;align-items:center;gap:8px;padding:4px 9px 12px;color:var(--em-color-text-section);font-size:11px;font-weight:700;letter-spacing:.035em;}
+.evil-messenger-pm-section-dot {width:7px;height:7px;display:inline-block;border-radius:50%;background:var(--em-color-status-offline-dot);}
+.evil-messenger-pm-section-dot.online {background:var(--em-color-status-online);box-shadow:0 0 0 3px var(--em-color-glow-status-online);}
+.evil-messenger-pm-section-count {margin-left:auto;color:var(--em-color-text-secondary);font-size:10px;font-variant-numeric:tabular-nums;}
+.evil-messenger-pm-section-empty {font-size:11px;color:var(--em-color-text-secondary);margin:0 8px 12px;line-height:1.5;}
+.evil-messenger-pm-player {grid-template-columns:31px minmax(0,1fr);min-height:61px;margin-bottom:5px;border:1px solid var(--em-color-transparent);border-radius:9px;transition:background .14s ease,border-color .14s ease;}
+.evil-messenger-pm-player:hover {background:var(--em-color-background-contact-hover-old);}
+.evil-messenger-pm-player.selected {background:var(--em-color-background-contact-selected-old);outline:0;border-color:var(--em-color-border-contact-selected-old);box-shadow:inset 3px 0 0 var(--em-color-selection-marker);}
+.evil-messenger-pm-player.is-offline {opacity:.54;filter:saturate(.55);}
+.evil-messenger-pm-player.is-offline.selected {opacity:.78;}
+.evil-messenger-pm-recipient-check {padding-left:3px;cursor:pointer;}
+.evil-messenger-pm-recipient-check input {margin:0;width:15px;height:15px;accent-color:var(--em-color-checkbox-accent);cursor:pointer;}
+.evil-messenger-pm-recipient-check input:disabled {cursor:not-allowed;opacity:.5;}
+.evil-messenger-pm-player-open {gap:10px;padding:8px 8px 8px 2px;color:inherit;cursor:pointer;}
+.evil-messenger-pm-player-open:hover,.evil-messenger-pm-player-open:focus {background:var(--em-color-transparent);border:0;box-shadow:none;}
+.evil-messenger-pm-avatar {position:relative;flex:0 0 38px;width:38px;height:38px;display:inline-flex;}
+.evil-messenger-pm-player-open .evil-messenger-pm-avatar img,
+.evil-messenger-pm-thread-header .evil-messenger-pm-avatar img {width:38px;height:38px;border-radius:11px;border:1px solid var(--em-color-border-avatar);object-fit:cover;}
+.evil-messenger-pm-avatar-status {position:absolute;right:-3px;bottom:-3px;width:11px;height:11px;border-radius:50%;border:2px solid var(--em-color-background-panel);background:var(--em-color-status-offline-avatar);box-sizing:border-box;}
+.evil-messenger-pm-avatar-status.online {background:var(--em-color-status-avatar-online);}
+.evil-messenger-pm-player-text {gap:4px;}
+.evil-messenger-pm-player-text strong {color:var(--em-color-text-contact-name);font-size:12px;line-height:1.25;}
+.evil-messenger-pm-player-text small {opacity:1;color:var(--em-color-text-secondary);font-size:10px;}
+.evil-messenger-pm-unread {background:var(--em-color-badge-background);color:var(--em-color-background-main);box-shadow:0 2px 10px var(--em-color-shadow-unread);}
+.evil-messenger-pm-main {background:var(--em-color-background-main);}
+.evil-messenger-pm-thread-header {padding:16px 22px;gap:13px;min-height:79px;box-sizing:border-box;background:var(--em-color-background-thread-header);border-bottom:1px solid var(--em-color-border-divider);}
+.evil-messenger-pm-thread-header > div {gap:3px;min-width:0;}
+.evil-messenger-pm-thread-header strong {font-size:15px;color:var(--em-color-text-thread-name);line-height:1.1;}
+.evil-messenger-pm-thread-header small {color:var(--em-color-text-secondary);opacity:1;font-size:11px;}
+.evil-messenger-pm-history {padding:22px;gap:12px;}
+.evil-messenger-pm-history-item {
+  border-radius: 12px;
+  max-width: 78%;
+  min-width: 60px;
+  padding: 4px 14px;
+  background: var(--em-color-background-bubble);
+  border: 1px solid var(--em-color-border-bubble);
+  box-shadow: 0 3px 12px var(--em-color-shadow-bubble-soft);
+}
+.evil-messenger-pm-history-item.incoming {background:var(--em-color-background-bubble);}
+.evil-messenger-pm-history-item.outgoing {background:var(--em-color-background-bubble-sent);border-color:var(--em-color-border-bubble-sent);}
+.evil-messenger-pm-history-meta {font-size:11px;color:var(--em-color-text-message-meta);margin-bottom:7px;}
+.evil-messenger-pm-history-meta time {opacity:1;color:var(--em-color-text-timestamp);font-variant-numeric:tabular-nums;}
+.evil-messenger-pm-thread-empty {opacity:1;color:var(--em-color-text-empty);gap:5px;padding:24px;}
+.evil-messenger-pm-thread-empty i {display:grid;place-items:center;width:66px;height:66px;font-size:27px;color:var(--em-color-text-empty-icon);background:var(--em-color-background-empty-icon);border:1px solid var(--em-color-border-empty-icon);border-radius:20px;margin:0 0 15px;}
+.evil-messenger-pm-thread-empty strong {font-size:15px;color:var(--em-color-text-empty-title);font-weight:650;}
+.evil-messenger-pm-thread-empty p {font-size:12px;max-width:280px;line-height:1.6;margin:2px 0 0;}
+.evil-messenger-pm-composer {padding:14px 20px 16px;background:linear-gradient(180deg,var(--em-color-background-panel-top),var(--em-color-background-composer-bottom));border-top:1px solid var(--em-color-border-divider);}
+.evil-messenger-pm-composer-label {display:flex;align-items:center;gap:9px;margin-bottom:9px;color:var(--em-color-text-composer-label);font-size:11px;font-weight:700;}
+.evil-messenger-pm-composer-label span {font-size:9px;letter-spacing:.12em;color:var(--em-color-text-tag);background:var(--em-color-background-bubble-sent);border-radius:4px;padding:3px 6px;}
+.evil-messenger-pm-composer textarea {background:var(--em-color-background-main);color:var(--em-color-text-input);border:1px solid var(--em-color-border-input);border-radius:9px;padding:12px 14px;min-height:84px;max-height:190px;line-height:1.5;box-shadow:inset 0 1px 5px var(--em-color-shadow-input-inset);}
+.evil-messenger-pm-composer textarea:focus {outline:0;border-color:var(--em-color-border-input-focus);box-shadow:0 0 0 2px var(--em-color-focus-ring-input);}
+.evil-messenger-pm-composer textarea::placeholder {color:var(--em-color-text-placeholder);}
+.evil-messenger-pm-send-options {gap:9px;margin-top:11px;justify-content:flex-end;}
+.evil-messenger-pm-send {
+  min-width: 170px;
+  min-height: 35px;
+  border-radius: 7px;
+  border: 1px solid var(--em-color-border-button-primary);
+  color: var(--em-color-text-button);
+  background: var(--em-color-background-send);
+  padding: 7px 12px;
+  font-size: 13px;
+}
+.evil-messenger-pm-send:hover {background:var(--em-color-background-send-hover);border-color:var(--em-color-border-button-hover);color:var(--em-color-white);}
+.evil-messenger-pm-send-classic {background:var(--em-color-background-send);border-color:var(--em-color-border-button-secondary);}
+.evil-messenger-pm-send i {margin-right:7px;}
+@media (max-width:760px) {
+  .evil-messenger-pm-dashboard-content {grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);}
+  .evil-messenger-pm-sidebar {max-height:200px;border-right:0;border-bottom:1px solid var(--em-color-border-divider);}
+  .evil-messenger-pm-sidebar > header.evil-messenger-pm-sidebar-heading {padding:10px 14px;}
+  .evil-messenger-pm-sidebar > header p,.evil-messenger-pm-eyebrow {display:none;}
+  .evil-messenger-pm-player-list {padding-bottom:7px;}
+  .evil-messenger-pm-thread-header {min-height:65px;}
+  .evil-messenger-pm-history {padding:12px;}
+  .evil-messenger-pm-composer {padding:10px;}
+  .evil-messenger-pm-send {min-width:0;flex:1;}
+}
+
+/* Palette partagée par les trois fenêtres ; aucun style global Foundry. */
+.evil-messenger-pm-reply,
+.evil-messenger-pm-notification {
+  color: var(--em-color-text-primary);
+}
+.evil-messenger-pm-reply .window-content,
+.evil-messenger-pm-notification .window-content {
+  background:var(--em-color-background-main);color:var(--em-color-text-primary);
+}
+.evil-messenger-pm-reply-content {padding:0;gap:0;background:var(--em-color-background-main);}
+.evil-messenger-pm-popup-peer {
+  min-height:78px;box-sizing:border-box;padding:14px 20px;gap:12px;
+  background:linear-gradient(155deg,var(--em-color-background-popup-top),var(--em-color-background-panel));
+  border-bottom:1px solid var(--em-color-border-divider);
+}
+.evil-messenger-pm-popup-peer > div {gap:3px;min-width:0;}
+.evil-messenger-pm-popup-peer strong {color:var(--em-color-text-popup-name);font-size:15px;}
+.evil-messenger-pm-popup-peer small {opacity:1;color:var(--em-color-text-secondary);font-size:11px;}
+.evil-messenger-pm-reply .evil-messenger-pm-avatar img {
+  width:38px;height:38px;border:1px solid var(--em-color-border-avatar);border-radius:11px;object-fit:cover;
+}
+.evil-messenger-pm-reply .evil-messenger-pm-avatar-status {border-color:var(--em-color-background-avatar-ring);}
+.evil-messenger-pm-player-history {
+  max-height:none;padding:16px 19px;gap:11px;
+  background:var(--em-color-background-main);
+}
+.evil-messenger-pm-player-history-item {
+  min-width: 60px;
+  max-width: 78%;
+  padding: 4px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--em-color-border-bubble);
+  background: var(--em-color-background-bubble);
+  box-shadow: 0 3px 12px var(--em-color-shadow-bubble-soft);
+}
+.evil-messenger-pm-player-history-item.from-gm {background:var(--em-color-background-bubble);}
+.evil-messenger-pm-player-history-item.from-player {background:var(--em-color-background-bubble-sent);border-color:var(--em-color-border-bubble-sent);}
+.evil-messenger-pm-player-history-meta {font-size:11px;color:var(--em-color-text-message-meta);margin-bottom:7px;}
+.evil-messenger-pm-player-history-meta time {opacity:1;color:var(--em-color-text-timestamp);}
+.evil-messenger-pm-player-history-empty {
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+  font-size:12px;color:var(--em-color-text-empty);opacity:1;
+}
+.evil-messenger-pm-player-history-empty i {
+  display:grid;place-items:center;width:54px;height:54px;border-radius:16px;
+  font-size:23px;color:var(--em-color-text-empty-icon);background:var(--em-color-background-empty-icon);
+  border:1px solid var(--em-color-border-empty-icon);
+}
+.evil-messenger-pm-reply-compose {
+  flex:0 0 auto;padding:13px 19px 16px;
+  background:linear-gradient(180deg,var(--em-color-background-panel-top),var(--em-color-background-composer-bottom));border-top:1px solid var(--em-color-border-divider);
+}
+.evil-messenger-pm-reply-label {display:flex;align-items:center;gap:9px;font-size:11px;color:var(--em-color-text-composer-label);margin-bottom:9px;}
+.evil-messenger-pm-reply-label span {font-size:9px;letter-spacing:.12em;color:var(--em-color-text-tag);background:var(--em-color-background-bubble-sent);border-radius:4px;padding:3px 6px;}
+.evil-messenger-pm-reply textarea {
+  min-height:75px;max-height:175px;padding:11px 13px;
+  background:var(--em-color-background-main);color:var(--em-color-text-input);border:1px solid var(--em-color-border-input);
+  border-radius:9px;line-height:1.5;box-shadow:inset 0 1px 5px var(--em-color-shadow-input-inset);
+}
+.evil-messenger-pm-reply textarea:focus {outline:0;border-color:var(--em-color-border-input-focus);box-shadow:0 0 0 2px var(--em-color-focus-ring-input);}
+.evil-messenger-pm-reply textarea::placeholder {color:var(--em-color-text-placeholder);}
+.evil-messenger-pm-reply-actions {margin-top:10px;}
+.evil-messenger-pm-reply-actions button {
+  min-height: 35px;
+  padding: 7px 14px;
+  border-radius: 7px;
+  border: 1px solid var(--em-color-border-button-primary);
+  background: var(--em-color-background-send);
+  color: var(--em-color-text-button);
+  font-size: 13px;
+  font-weight: 100;
+}
+.evil-messenger-pm-reply-actions button:hover {background:var(--em-color-background-send-hover);border-color:var(--em-color-border-button-hover);color:var(--em-color-white);}
+.evil-messenger-pm-reply-actions button i {margin-right:7px;}
+
+.evil-messenger-pm-notification-content {
+  padding:17px;grid-template-columns:44px minmax(0,1fr);gap:12px;
+  background:linear-gradient(145deg,var(--em-color-background-avatar-ring),var(--em-color-background-sidebar-bottom));
+  border:1px solid var(--em-color-border-notification);
+}
+.evil-messenger-pm-notification-icon {
+  width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+  font-size:20px;color:var(--em-color-text-notification-icon);border:1px solid var(--em-color-border-notification-icon);
+  background:var(--em-color-background-notification-icon);
+}
+.evil-messenger-pm-notification-text {gap:3px;}
+.evil-messenger-pm-notification-kicker {
+  font-size:9px!important;letter-spacing:.13em;color:var(--em-color-text-notification-kicker)!important;
+  opacity:1!important;font-weight:700;
+}
+.evil-messenger-pm-notification-text strong {font-size:15px;color:var(--em-color-text-notification-name);line-height:1.3;overflow-wrap:anywhere;}
+.evil-messenger-pm-notification-text > span:last-child {color:var(--em-color-text-secondary);font-size:11px;opacity:1;}
+.evil-messenger-pm-notification-actions {padding-top:10px;border-top:1px solid var(--em-color-border-divider);gap:9px;}
+.evil-messenger-pm-notification-actions button {
+  min-height:34px;padding:6px 11px;border-radius:7px;border:1px solid var(--em-color-border-button-secondary);
+  color:var(--em-color-text-button-secondary);background:var(--em-color-transparent);font-size:11px;font-weight:700;
+}
+.evil-messenger-pm-notification-actions button:last-child {border-color:var(--em-color-border-button-primary);background:var(--em-color-background-button);}
+.evil-messenger-pm-notification-actions button:hover {background:var(--em-color-background-button-hover);border-color:var(--em-color-border-button-hover);color:var(--em-color-white);}
+.evil-messenger-pm-notification-actions button i {margin-right:5px;}
+
+/* 0.2.2 — Lisibilité : hiérarchie épurée, sans ajouter de nouveaux éléments UI. */
+.evil-messenger-pm-sidebar > header.evil-messenger-pm-sidebar-heading {
+  padding: 17px 18px 15px;
+  gap: 0;
+}
+.evil-messenger-pm-sidebar-title {font-size: 16px; font-weight: 700;}
+.evil-messenger-pm-contact-section {padding-top: 12px;}
+.evil-messenger-pm-contact-section.offline {margin-top: 11px; padding-top: 14px;}
+.evil-messenger-pm-section-label {padding: 2px 7px 10px; font-size: 11px; letter-spacing: .015em;}
+.evil-messenger-pm-player {min-height: 56px;}
+.evil-messenger-pm-player-text {gap: 3px;}
+.evil-messenger-pm-thread-header {min-height: 66px; padding: 11px 19px;}
+.evil-messenger-pm-thread-header > div {gap: 4px;}
+.evil-messenger-pm-thread-empty {min-height: 0; gap: 0;}
+.evil-messenger-pm-thread-empty p {font-size: 12px; color: var(--em-color-text-empty-muted); margin: 0;}
+.evil-messenger-pm-composer {padding: 13px 18px 14px;}
+.evil-messenger-pm-composer textarea {min-height: 84px;}
+.evil-messenger-pm-popup-peer {min-height: 65px; padding: 11px 18px;}
+.evil-messenger-pm-popup-peer > div {gap: 4px;}
+.evil-messenger-pm-player-history-empty {gap: 0; font-size: 12px; color: var(--em-color-text-empty-muted);}
+.evil-messenger-pm-reply-compose {padding: 13px 18px 15px;}
+.evil-messenger-pm-notification-content {padding: 14px 16px; gap: 10px;}
+.evil-messenger-pm-notification-text {gap: 5px;}
+.evil-messenger-pm-notification-text strong {font-size: 14px;}
+.evil-messenger-pm-notification-text > span:last-child {font-size: 12px;}
+@media (max-width:760px) {
+  .evil-messenger-pm-sidebar > header.evil-messenger-pm-sidebar-heading {padding: 10px 14px;}
+}
+
+/* 0.2.4 — Alignement des en-têtes et relief discret.
+   Les deux bandeaux partagent la même hauteur sans toucher à leur contenu. */
+.evil-messenger-pm-dashboard .evil-messenger-pm-sidebar > header.evil-messenger-pm-sidebar-heading,
+.evil-messenger-pm-dashboard .evil-messenger-pm-thread-header {
+  box-sizing: border-box;
+  height: 66px;
+  min-height: 66px;
+  flex: 0 0 66px;
+}
+.evil-messenger-pm-dashboard .evil-messenger-pm-sidebar > header.evil-messenger-pm-sidebar-heading {
+  justify-content: center;
+  padding: 0 18px;
+}
+/* Ombres doubles peu prononcées : séparation douce sans lueur colorée. */
+.evil-messenger-pm-dashboard .evil-messenger-pm-history-item,
+.evil-messenger-pm-reply .evil-messenger-pm-player-history-item {
+  box-shadow: 0 5px 12px var(--em-color-shadow-button), 0 1px 2px var(--em-color-shadow-pressed-inset), inset 0 1px 0 var(--em-color-highlight-bubble-inset);
+}
+.evil-messenger-pm-dashboard .evil-messenger-pm-send,
+.evil-messenger-pm-reply .evil-messenger-pm-reply-actions button,
+.evil-messenger-pm-notification .evil-messenger-pm-notification-actions button {
+  box-shadow: 0 3px 7px var(--em-color-shadow-button), inset 0 1px 0 var(--em-color-highlight-button-inset);
+  transition: background .14s ease, border-color .14s ease, box-shadow .14s ease;
+}
+.evil-messenger-pm-dashboard .evil-messenger-pm-send:hover:not(:disabled),
+.evil-messenger-pm-reply .evil-messenger-pm-reply-actions button:hover:not(:disabled),
+.evil-messenger-pm-notification .evil-messenger-pm-notification-actions button:hover:not(:disabled) {
+  box-shadow: 0 5px 12px var(--em-color-shadow-button-hover), inset 0 1px 0 var(--em-color-highlight-button-hover);
+}
+.evil-messenger-pm-dashboard .evil-messenger-pm-send:active:not(:disabled),
+.evil-messenger-pm-reply .evil-messenger-pm-reply-actions button:active:not(:disabled),
+.evil-messenger-pm-notification .evil-messenger-pm-notification-actions button:active:not(:disabled) {
+  box-shadow: 0 1px 3px var(--em-color-shadow-pressed), inset 0 1px 3px var(--em-color-shadow-pressed-inset);
+}
+@media (max-width:760px) {
+  .evil-messenger-pm-dashboard .evil-messenger-pm-sidebar > header.evil-messenger-pm-sidebar-heading,
+  .evil-messenger-pm-dashboard .evil-messenger-pm-thread-header {
+    height: 65px; min-height: 65px; flex-basis: 65px;
+  }
+  .evil-messenger-pm-dashboard .evil-messenger-pm-sidebar > header.evil-messenger-pm-sidebar-heading {padding: 0 14px;}
+}
+
+/* 0.2.5 — Contacts épurés : des lignes sans encadrement de carte. */
+.evil-messenger-pm-dashboard .evil-messenger-pm-player {
+  border: 0;
+  border-radius: 6px;
+  box-shadow: none;
+  background: var(--em-color-transparent);
+  transition: background .14s ease;
+}
+.evil-messenger-pm-dashboard .evil-messenger-pm-player:hover {
+  background: var(--em-color-background-contact-hover);
+  border: 0;
+  box-shadow: none;
+}
+.evil-messenger-pm-dashboard .evil-messenger-pm-player.selected,
+.evil-messenger-pm-dashboard .evil-messenger-pm-player.selected:hover {
+  background: var(--em-color-background-contact-selected);
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+}
+
+/* 0.2.8 — Barres de défilement de la messagerie : priorité sur les thèmes système.
+   Portée limitée aux listes de contacts et historiques des fenêtres Evilbram Messenger. */
+.evil-messenger-pm-dashboard .evil-messenger-pm-player-list,
+.evil-messenger-pm-dashboard .evil-messenger-pm-history,
+.evil-messenger-pm-reply .evil-messenger-pm-player-history {
+  scrollbar-color: var(--em-color-scrollbar-thumb) var(--em-color-scrollbar-track) !important;
+}
+
+.evil-messenger-pm-dashboard .evil-messenger-pm-player-list::-webkit-scrollbar-thumb,
+.evil-messenger-pm-dashboard .evil-messenger-pm-history::-webkit-scrollbar-thumb,
+.evil-messenger-pm-reply .evil-messenger-pm-player-history::-webkit-scrollbar-thumb {
+  background-color: var(--em-color-scrollbar-thumb) !important;
+}
+
+.evil-messenger-pm-dashboard .evil-messenger-pm-player-list::-webkit-scrollbar-track,
+.evil-messenger-pm-dashboard .evil-messenger-pm-history::-webkit-scrollbar-track,
+.evil-messenger-pm-reply .evil-messenger-pm-player-history::-webkit-scrollbar-track {
+  background-color: var(--em-color-scrollbar-track) !important;
+}
+
+/* 0.2.9 — Liste de contacts sans titres de statut ; séparation conservée. */
+.evil-messenger-pm-dashboard .evil-messenger-pm-contact-section {
+  padding-top: 9px;
+}
+.evil-messenger-pm-dashboard .evil-messenger-pm-contact-section.offline {
+  margin-top: 11px;
+  padding-top: 14px;
+  border-top: 1px solid var(--em-color-border-divider);
+}
+.evil-messenger-pm-dashboard .evil-messenger-pm-player-text small {
+  opacity: 1;
+  color: var(--em-color-text-secondary);
+  font-size: 12px;
+}
+.evil-messenger-pm-dashboard .evil-messenger-pm-player-text strong {
+  color: var(--em-color-text-contact-name);
+  font-size: 15px;
+  line-height: 1.25;
+}
+
+
+/* 0.2.14 — Notification MJ : portrait expéditeur + boutons harmonisés */
+.evil-messenger-pm-notification-icon {
+  overflow: hidden;
+}
+.evil-messenger-pm-notification-icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: inherit;
+}
+.evil-messenger-pm-notification-actions button {
+  min-height: 34px;
+  padding: 6px 11px;
+  border-radius: 7px;
+  border: 1px solid var(--em-color-border-button-secondary);
+  color: var(--em-color-text-button-secondary);
+  background: var(--em-color-background-send);
+  font-size: 13px;
+  font-weight: 100;
+}
+.evil-messenger-pm-notification-actions button:last-child {
+  border-color: var(--em-color-border-button-primary);
+  background: var(--em-color-background-send);
+}
+.evil-messenger-pm-notification-actions button:hover,
+.evil-messenger-pm-notification-actions button:hover:not(:disabled) {
+  background: var(--em-color-background-send-hover);
+  border-color: var(--em-color-border-button-hover);
+  color: var(--em-color-white);
+}
+
+
+/* 0.3.1 — Heure en bas de bulle, coche à cheval sur son coin inférieur droit.
+   Position absolue = aucun espace pris dans le flux, hauteur de bulle inchangée.
+   Ajuster uniquement les quatre variables --em-pm-*-bottom/right en haut du CSS. */
+.evil-messenger-pm-dashboard .evil-messenger-pm-history-item,
+.evil-messenger-pm-reply .evil-messenger-pm-player-history-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  overflow: visible;
+  padding-bottom: 18px;
+}
+.evil-messenger-pm-message-footer {
+  /* Simple calque par-dessus la bulle : ne déplace ni texte ni bordures. */
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  line-height: 1;
+  font-size: 10px;
+  color: var(--em-color-text-timestamp);
+  font-variant-numeric: tabular-nums;
+}
+.evil-messenger-pm-message-footer time {
+  position: absolute;
+  bottom: var(--em-pm-time-bottom);
+  right: var(--em-pm-time-right);
+  opacity: 1;
+  white-space: nowrap;
+}
+.evil-messenger-pm-read-indicator {
+  display: none;
+  position: absolute;
+  bottom: var(--em-pm-read-bottom);
+  right: var(--em-pm-read-right);
+  align-items: center;
+  justify-content: center;
+  width: var(--em-pm-read-width);
+  height: var(--em-pm-read-height);
+  line-height: 1;
+  pointer-events: none;
+}
+.evil-messenger-pm-read-indicator img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.evil-messenger-pm-history-item.is-read .evil-messenger-pm-read-indicator,
+.evil-messenger-pm-player-history-item.is-read .evil-messenger-pm-read-indicator {
+  display: inline-flex;
+}
+.evil-messenger-pm-typing[hidden] {display: none !important;}
+.evil-messenger-pm-typing {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 20px 10px;
+  background: var(--em-color-background-main);
+  color: var(--em-color-text-secondary);
+  font-size: 11px;
+  line-height: 1.3;
+}
+.evil-messenger-pm-typing-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 12px;
+}
+.evil-messenger-pm-typing-dots i {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--em-color-text-secondary);
+  animation: evil-messenger-typing-pulse 1.1s ease-in-out infinite;
+}
+.evil-messenger-pm-typing-dots i:nth-child(2) {animation-delay: .16s;}
+.evil-messenger-pm-typing-dots i:nth-child(3) {animation-delay: .32s;}
+@keyframes evil-messenger-typing-pulse {
+  0%, 65%, 100% {opacity: .45; transform: translateY(0);}
+  30% {opacity: 1; transform: translateY(-3px);}
+}
+@media (prefers-reduced-motion: reduce) {
+  .evil-messenger-pm-typing-dots i {animation: none; opacity: 1;}
+}
+
+/* 0.3.5 — Dégagement sous le dernier MP et scroll de l'historique. */
+.evil-messenger-pm-dashboard .evil-messenger-pm-history-item,
+.evil-messenger-pm-reply .evil-messenger-pm-player-history-item {
+  flex-shrink: 0;
+}
+.evil-messenger-pm-dashboard .evil-messenger-pm-history-item:last-of-type,
+.evil-messenger-pm-reply .evil-messenger-pm-player-history-item:last-of-type {
+  margin-bottom: var(--em-pm-typing-clearance);
+}
+
+
+/* 0.3.7 — Texture fixe derrière l'historique, non entraînée par le scroll.
+   Wrapper indépendant pour que le décor couvre TOUTE la zone visible,
+   même lorsque le fil comporte beaucoup de messages ou est défilé.
+   Le scroll reste sur la même div qu'avant : pas de changement moteur. */
+.evil-messenger-pm-dashboard .evil-messenger-pm-history-viewport,
+.evil-messenger-pm-reply .evil-messenger-pm-history-viewport {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--em-color-background-main);
+}
+.evil-messenger-pm-dashboard .evil-messenger-pm-history-viewport::before,
+.evil-messenger-pm-reply .evil-messenger-pm-history-viewport::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("../assets/chat-texture.webp");
+  background-repeat: repeat;
+  background-size: 512px 512px;
+  opacity: var(--em-pm-texture-history-opacity);
+}
+.evil-messenger-pm-dashboard .evil-messenger-pm-history-viewport > .evil-messenger-pm-history,
+.evil-messenger-pm-reply .evil-messenger-pm-history-viewport > .evil-messenger-pm-player-history {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
+  background: transparent;
+}
+
+/* Texture uniquement DANS le champ de rédaction, jamais sur son panneau.
+   Le fond est un calque derrière le textarea transparent. On ne change pas
+   l'opacité du texte, de la bordure ni du curseur de saisie. */
+.evil-messenger-pm-dashboard .evil-messenger-pm-texture-field,
+.evil-messenger-pm-reply .evil-messenger-pm-texture-field {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-width: 0;
+  background: var(--em-pm-texture-input-background);
+  border-radius: 9px;
+}
+.evil-messenger-pm-dashboard .evil-messenger-pm-texture-field::before,
+.evil-messenger-pm-reply .evil-messenger-pm-texture-field::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("../assets/chat-texture.webp");
+  background-repeat: repeat;
+  background-size: 512px 512px;
+  opacity: var(--em-pm-texture-composer-opacity);
+}
+.evil-messenger-pm-dashboard .evil-messenger-pm-composer .evil-messenger-pm-texture-field > textarea,
+.evil-messenger-pm-reply .evil-messenger-pm-reply-compose .evil-messenger-pm-texture-field > textarea {
+  position: relative;
+  display: block;
+  z-index: 1;
+  background: transparent;
+}
+
+
+/* 0.3.8 — Relief discret et homogène sur les surfaces.
+   Même lumière dans la colonne Contacts, les en-têtes, les zones de composition,
+   la notification MJ et les bulles. Le fond #111 de l'historique et les textures
+   du champ de saisie ne sont pas affectés. */
+.evil-messenger-pm-dashboard .evil-messenger-pm-sidebar,
+.evil-messenger-pm-dashboard .evil-messenger-pm-thread-header,
+.evil-messenger-pm-dashboard .evil-messenger-pm-composer,
+.evil-messenger-pm-reply .evil-messenger-pm-popup-peer,
+.evil-messenger-pm-reply .evil-messenger-pm-reply-compose,
+.evil-messenger-pm-notification .evil-messenger-pm-notification-content {
+  background-color: var(--em-color-background-panel);
+  background-image: var(--em-pm-surface-gradient);
+}
+
+/* Les teintes distinctes des bulles reçues et envoyées restent intactes.
+   On n'ajoute qu'une très faible variation lumineuse, identique partout. */
+.evil-messenger-pm-dashboard .evil-messenger-pm-history-item,
+.evil-messenger-pm-reply .evil-messenger-pm-player-history-item {
+  background-image: var(--em-pm-surface-gradient);
+}

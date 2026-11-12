@@ -1,0 +1,66 @@
+{
+  "EVILMESSENGER": {
+    "Window": {
+      "Dashboard": "Messaggi privati",
+      "Reply": "Messaggio privato",
+      "Notification": "Nuovo messaggio privato"
+    },
+    "Dashboard": {
+      "Contacts": "Contatti",
+      "ContactsOnline": "Contatti online",
+      "ContactsOffline": "Contatti offline",
+      "IncludeRecipient": "Includi nel prossimo invio",
+      "IncludeRecipientAria": "Includi {name} tra i destinatari",
+      "OpenConversation": "Apri la conversazione con {name}",
+      "OfflineRecipient": "Destinatario non disponibile (offline)",
+      "OfflineRecipientAria": "{name} è offline",
+      "OfflineConversation": "Visualizza la conversazione con {name} (offline)",
+      "NoOtherUsers": "Nessun altro utente disponibile.",
+      "NoMessages": "Nessun messaggio per il momento.",
+      "SelectContact": "Seleziona un contatto per visualizzare la conversazione.",
+      "PermissionWarning": "Non hai i permessi di Foundry per inviare messaggi privati in questo mondo.",
+      "DraftPlaceholder": "Scrivi un messaggio privato…",
+      "SendClassic": "Invio normale",
+      "SendPopup": "Invio popup"
+    },
+    "Reply": {
+      "DraftPlaceholder": "Scrivi una risposta…",
+      "Send": "Invia risposta"
+    },
+    "Notification": {
+      "MessageReceived": "Ti ha inviato un messaggio privato.",
+      "Ignore": "Ignora",
+      "ViewMessage": "Visualizza messaggio"
+    },
+    "Chat": {
+      "Reply": "Rispondi"
+    },
+    "Read": {
+      "Seen": "Letto"
+    },
+    "Typing": {
+      "Writing": "{name} sta scrivendo…"
+    },
+    "User": {
+      "Contact": "Contatto",
+      "GM": "GM",
+      "Player": "Giocatore"
+    },
+    "Error": {
+      "RollMissingFormula": "Inserisci una formula di tiro dopo /r o /roll.",
+      "RollInvalidFormula": "Formula di tiro non valida: {formula}",
+      "RecipientNotFound": "Destinatario non trovato.",
+      "PermissionDenied": "Non hai il permesso di inviare messaggi privati in questo mondo.",
+      "EnterMessage": "Scrivi un messaggio prima di inviarlo.",
+      "NoOnlineRecipient": "Seleziona almeno un destinatario online.",
+      "SendFailed": "Impossibile inviare il messaggio privato.",
+      "EnterReply": "Scrivi una risposta prima di inviarla.",
+      "ReplyFailed": "Impossibile inviare la risposta."
+    },
+    "Info": {
+      "MessagesSentOne": "Messaggio privato inviato a {count} destinatario.",
+      "MessagesSentMany": "Messaggi privati inviati a {count} destinatari.",
+      "ReplySent": "Messaggio privato inviato."
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "EVILMESSENGER": {
+    "Window": {
+      "Dashboard": "Private Messages",
+      "Reply": "Private Message",
+      "Notification": "New Private Message"
+    },
+    "Dashboard": {
+      "Contacts": "Contacts",
+      "ContactsOnline": "Online contacts",
+      "ContactsOffline": "Offline contacts",
+      "IncludeRecipient": "Include in next message",
+      "IncludeRecipientAria": "Include {name} in the message",
+      "OpenConversation": "Open conversation with {name}",
+      "OfflineRecipient": "Recipient unavailable (offline)",
+      "OfflineRecipientAria": "{name} is offline",
+      "OfflineConversation": "View conversation with {name} (offline)",
+      "NoOtherUsers": "No other users available.",
+      "NoMessages": "No messages yet.",
+      "SelectContact": "Select a contact to view the conversation.",
+      "PermissionWarning": "You do not have permission in Foundry to send private messages in this world.",
+      "DraftPlaceholder": "Write a private message…",
+      "SendClassic": "Standard Send",
+      "SendPopup": "Popup Send"
+    },
+    "Reply": {
+      "DraftPlaceholder": "Write a reply…",
+      "Send": "Send Reply"
+    },
+    "Notification": {
+      "MessageReceived": "Sent you a private message.",
+      "Ignore": "Dismiss",
+      "ViewMessage": "View Message"
+    },
+    "Chat": {
+      "Reply": "Reply"
+    },
+    "Read": {
+      "Seen": "Seen"
+    },
+    "Typing": {
+      "Writing": "{name} is typing…"
+    },
+    "User": {
+      "Contact": "Contact",
+      "GM": "GM",
+      "Player": "Player"
+    },
+    "Error": {
+      "RollMissingFormula": "Enter a dice formula after /r or /roll.",
+      "RollInvalidFormula": "Invalid dice formula: {formula}",
+      "RecipientNotFound": "Recipient not found.",
+      "PermissionDenied": "You do not have permission to send private messages in this world.",
+      "EnterMessage": "Write a message before sending.",
+      "NoOnlineRecipient": "Select at least one online recipient.",
+      "SendFailed": "Could not send the private message.",
+      "EnterReply": "Write a reply before sending.",
+      "ReplyFailed": "Could not send the reply."
+    },
+    "Info": {
+      "MessagesSentOne": "Private message sent to {count} recipient.",
+      "MessagesSentMany": "Private messages sent to {count} recipients.",
+      "ReplySent": "Private message sent."
+    }
+  }
+}

@@ -1,0 +1,43 @@
+<section class="evil-messenger-pm-reply-content">
+  {{#if peer}}
+    <header class="evil-messenger-pm-popup-peer">
+      <span class="evil-messenger-pm-avatar"><img src="{{peer.img}}" alt=""><span class="evil-messenger-pm-avatar-status {{#if peer.active}}online{{else}}offline{{/if}}"></span></span>
+      <div>
+        <strong>{{peer.label}}</strong>
+        {{#if peer.characterName}}<small>{{peer.userName}}</small>{{/if}}
+      </div>
+    </header>
+  {{/if}}
+
+  <div class="evil-messenger-pm-history-viewport">
+    <div class="evil-messenger-pm-player-history">
+    {{#if hasHistory}}
+      {{#each history}}
+        <article class="evil-messenger-pm-player-history-item {{#if fromMe}}from-player{{else}}from-gm{{/if}} {{#if seen}}is-read{{/if}}" data-pm-message-id="{{id}}">
+          <div class="evil-messenger-pm-player-history-body">{{{content}}}</div>
+          <div class="evil-messenger-pm-message-footer">
+            <time>{{time}}</time>
+            {{#if fromMe}}<span class="evil-messenger-pm-read-indicator" title="{{evilMessengerT 'Read.Seen'}}" aria-label="{{evilMessengerT 'Read.Seen'}}"><img src="modules/evil-messenger/assets/pm-read-indicator.webp" alt="{{evilMessengerT 'Read.Seen'}}"></span>{{/if}}
+          </div>
+        </article>
+      {{/each}}
+    {{else}}
+      <div class="evil-messenger-pm-player-history-empty"><span>{{evilMessengerT "Dashboard.NoMessages"}}</span></div>
+    {{/if}}
+    </div>
+  </div>
+
+  <div class="evil-messenger-pm-typing" data-pm-typing-indicator hidden role="status" aria-live="polite">
+    <span class="evil-messenger-pm-typing-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span data-pm-typing-label></span>
+  </div>
+
+  <div class="evil-messenger-pm-reply-compose">
+    <div class="evil-messenger-pm-texture-field">
+      <textarea id="evil-messenger-pm-reply-text" data-pm-reply-draft spellcheck="true" rows="4" placeholder="{{evilMessengerT 'Reply.DraftPlaceholder'}}">{{reply}}</textarea>
+    </div>
+    <div class="evil-messenger-pm-reply-actions">
+      <button type="button" data-action="sendReply"><i class="fa-solid fa-paper-plane"></i> {{evilMessengerT "Reply.Send"}}</button>
+    </div>
+  </div>
+</section>
