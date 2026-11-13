@@ -47,7 +47,7 @@
   --em-color-background-directory-hover: rgba(170,95,35,0.12);
   --em-color-background-count-badge: rgba(181,197,220,.12);
   --em-color-background-contact-hover: rgba(255,255,255,.045);
-  --em-color-background-contact-selected: rgba(255,255,255,.075);
+  --em-color-background-contact-selected: #39000096;
   --em-color-background-thread-header: rgba(27,27,27,.94);
   --em-color-overlay-bubble-outgoing-old: rgba(55,105,190,0.16);
   --em-color-overlay-contact-selected-old: rgba(90,135,220,0.18);
@@ -658,7 +658,15 @@
   color: var(--em-color-text-secondary); font-size: 10px; font-weight: 750;
   letter-spacing: .16em;
 }
-.evil-messenger-pm-sidebar-title {font-size: 19px;font-weight: 750;display:flex;align-items:center;gap:10px;line-height:1.3;}
+.evil-messenger-pm-sidebar-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.3;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+}
 .evil-messenger-pm-contact-total {display:inline-flex;justify-content:center;align-items:center;min-width:22px;height:22px;padding:0 6px;border-radius:7px;font-size:11px;background:var(--em-color-background-count-badge);color:var(--em-color-text-count-badge);}
 .evil-messenger-pm-sidebar > header p {color:var(--em-color-text-secondary);font-size:11px;line-height:1.4;margin:0;}
 .evil-messenger-pm-player-list {padding:0 10px 16px;}
@@ -849,7 +857,7 @@
   padding: 17px 18px 15px;
   gap: 0;
 }
-.evil-messenger-pm-sidebar-title {font-size: 16px; font-weight: 700;}
+
 .evil-messenger-pm-contact-section {padding-top: 12px;}
 .evil-messenger-pm-contact-section.offline {margin-top: 11px; padding-top: 14px;}
 .evil-messenger-pm-section-label {padding: 2px 7px 10px; font-size: 11px; letter-spacing: .015em;}

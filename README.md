@@ -37,7 +37,7 @@ L'interface reste volontairement sobre pour s'intégrer aussi bien à une enquê
 ### Ce que propose le module
 
 - **Une messagerie dédiée :** retrouvez les échanges privés avec chaque joueur ou MJ, dans une fenêtre claire et facile à utiliser.
-- **Deux façons d'envoyer un MP :** un **envoi classique** ou un **envoi en popup**, qui ouvre une fenêtre de message chez le destinataire.
+- **Deux façons d'envoyer un MP :** un **envoi classique** ou un **envoi en popup**, qui ouvre une fenêtre chez le destinataire si son centre des MP n'est pas déjà ouvert.
 - **Des contacts faciles à repérer :** utilisateurs connectés en premier, contacts hors ligne grisés, portrait du personnage attribué au compte et icône dédiée au MJ.
 - **Un indicateur « Vu » :** sachez quand le destinataire a ouvert votre conversation dans Evilbram Messenger.
 - **Un indicateur « écrit… » :** trois petits points animés vous signalent qu'un interlocuteur prépare une réponse.
@@ -52,13 +52,13 @@ L'interface reste volontairement sobre pour s'intégrer aussi bien à une enquê
 3. **Rédigez votre message**, puis cliquez sur **Envoi classique** ou **Envoi Popup**.
 4. **Poursuivez l'échange** dans la conversation : les nouveaux messages, les accusés de lecture et l'indicateur de saisie s'y affichent directement.
 
-Le MJ peut également ouvrir le centre des MP depuis les contrôles de scène. Lorsqu'il reçoit un MP classique sans avoir le centre ouvert, une petite notification lui propose d'afficher le message.
+MJ et joueurs peuvent également ouvrir le centre des MP depuis les outils de token. Lorsqu'un utilisateur reçoit un MP classique sans avoir le centre ouvert, une petite notification lui propose d'afficher le message. Si la fenêtre est déjà ouverte, le compteur de messages non lus apparaît dans la liste des contacts ; il disparaît lorsque le destinataire interagit avec la conversation concernée.
 
 ### Bon à savoir
 
 - Le module fonctionne avec les **messages privés natifs de Foundry** : l'historique dépend donc des messages conservés dans le chat de votre monde. Un nettoyage de cet historique peut aussi supprimer d'anciens MP.
 - Les **destinataires doivent être connectés** pour recevoir un nouvel envoi. Les conversations avec les contacts hors ligne restent consultables.
-- Le statut **« Vu »** apparaît lorsque la conversation est ouverte dans Evilbram Messenger (fenêtre principale ou popup), et non simplement parce qu'un message a été affiché dans le chat classique.
+- Le statut **« Vu »** apparaît lorsque le destinataire ouvre ou consulte la conversation dans Evilbram Messenger (fenêtre principale ou popup), et non simplement parce qu'un message a été affiché dans le chat classique.
 - **Evil Toolbox n'est pas nécessaire** : Evilbram Messenger est un module autonome.
 
 **Compatibilité :** Foundry VTT **v14**.
@@ -82,7 +82,7 @@ Its understated design fits a wide range of settings, from fantasy adventures an
 ### Features
 
 - **A dedicated messenger:** access private conversations with each player or GM through a clear, easy-to-use window.
-- **Two ways to send a message:** choose **Standard Send** or **Popup Send**, which opens a message window for the recipient.
+- **Two ways to send a message:** choose **Standard Send** or **Popup Send**, which opens a message window if the recipient's messenger is not already open.
 - **Clear contact list:** online users appear first, offline contacts are dimmed, assigned character portraits are displayed, and GMs have their own icon.
 - **Read receipts:** a **Seen** indicator appears when the recipient opens your conversation in Evilbram Messenger.
 - **Typing indicator:** three animated dots let you know when someone is composing a reply.
@@ -97,13 +97,13 @@ Its understated design fits a wide range of settings, from fantasy adventures an
 3. **Write your message**, then choose **Standard Send** or **Popup Send**.
 4. **Continue the conversation:** new messages, read receipts, and typing indicators appear directly in the conversation window.
 
-GMs can also open the messenger from the scene controls. When a classic private message arrives while the messenger is closed, a small notification lets the GM open it.
+Both GMs and players can also open the messenger from the Token Controls toolbar. When a standard private message arrives and the messenger is closed, a small notification lets the recipient open it. When the messenger is already open, unread message counts appear beside the contacts and clear once the recipient interacts with the relevant conversation.
 
 ### Good to know
 
 - The module uses **Foundry's native private chat messages**, so conversation history depends on the messages kept in your world. Clearing chat history may also remove older private messages.
 - **Recipients must be online** to receive a new message. You can still review conversations with offline contacts.
-- A message is marked **Seen** when its conversation is opened in Evilbram Messenger (main window or popup), not just when it appears in Foundry's regular chat.
+- A message is marked **Seen** when its conversation is opened or actively viewed in Evilbram Messenger (main window or popup), not just when it appears in Foundry's regular chat.
 - **Evil Toolbox is not required:** Evilbram Messenger works as a standalone module.
 
 **Compatibility:** Foundry VTT **v14**.
